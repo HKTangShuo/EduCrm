@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>哩哩渔娘</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <script type="text/javascript" src="/static/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/static/js/vector.js"></script>
+
+</head>
+<body>
+
+<div id="container">
+    <div id="output">
+        <div class="containerT">
+            <h1 style="font-size: 20px;font-weight: 400">哩哩渔娘CRM系统</h1>
+            <form class="form" id="entry_form" method="post" action="">
+                {% csrf_token %}
+                <input type="text" name="user" placeholder="账号" style="margin-bottom: 30px">
+                <input type="password" name="pwd" placeholder="密码" style="margin-bottom: 30px">
+                <input style="margin-bottom: 30px" type="submit" value="提交"><span style="color: red;font-size: 20px;font-weight: 400">{{ msg }}</span>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        Victor("container", "output");   //登录背景函数
+        $("#entry_name").focus();
+        $(document).keydown(function (event) {
+            if (event.keyCode == 13) {
+                $("#entry_btn").click();
+            }
+        });
+    });
+</script>
+</body>
+</html>

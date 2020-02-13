@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+{% block css %}
+    <style>
+    h4{
+        font-weight: 600;
+    }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="luffy-container">
+
+
+        <div class="panel panel-default" style="font-size: 14px">
+            <div class="panel-body" style="position: relative;">
+
+                <div style="margin-top: 5px;">
+                    <div style="display: inline-block;margin-right: 15px;font-size: 17px">
+                        <h4 style="display: inline-block">授课科目：</h4>{{ record.course }} 课时 {{ record.record_num }}
+                        <h4>授课知识点：</h4>
+                         <div class="content" style="margin-left: 70px;width: 400px">
+                        {{ record.knowledge_points|safe }}
+                        </div>
+
+                        <br>
+                        <h4>下节课展望或作业：</h4>
+                        <div class="content" style="margin-left: 70px">
+                            {{ record.execption|safe }}
+                        </div>
+
+                    </div>
+                    <br>
+                    <div style="display: inline-block;float: right;margin-top: 40px;font-size:18px ">
+                        <div>
+                            <div><i class="fa fa-user-o" aria-hidden="true"></i> 反馈老师：{{ record.teacher }}
+                            </div>
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                            反馈时间：{{ record.date }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
+        </div>
+{% endblock %}
