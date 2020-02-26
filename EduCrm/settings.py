@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ed^%7!^yj$9wmsv3e2@d1+rv-^!(19zl%^at&c29pcai1_5pt%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -144,3 +144,4 @@ VALID_URL_LIST = [
     '/login/',
     '/admin/.*'
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
